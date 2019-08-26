@@ -1,0 +1,3 @@
+nome;idade;telefone;matricula
+mariana silva;33;2198765432;1jhy3e
+gustavo da silva;35;2198765431;j1hgy67tgf

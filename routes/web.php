@@ -18,4 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/pacientes', 'PacienteController@index')->name('pacientes.index');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/pacientes', 'PacienteController@index')->name('pacientes.index');
+    Route::get('/pacientes/upload', 'PacienteController@upload')->name('pacientes.upload');
+    Route::post('/pacientes/enviar', 'PacienteController@enviar')->name('pacientes.enviar');
+});

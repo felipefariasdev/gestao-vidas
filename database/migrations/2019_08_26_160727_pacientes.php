@@ -13,7 +13,7 @@ class Pacientes extends Migration
             $table->string('nome',150);
             $table->integer('idade');
             $table->string('telefone',17);
-            $table->string('matricula',10);
+            $table->string('matricula',10)->unique();
             $table->timestamps();
         });
     }
