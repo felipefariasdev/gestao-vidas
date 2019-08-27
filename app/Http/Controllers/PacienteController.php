@@ -61,8 +61,6 @@ class PacienteController extends Controller
                         echo "</pre>";
                     } 
                 }
-                 
-
             }
             $i++;
         }
