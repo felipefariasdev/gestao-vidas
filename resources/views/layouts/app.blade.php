@@ -58,7 +58,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('pacientes.index') }}">Listar Pacientes</a>
+                                    <a class="dropdown-item" href="{{ route('pacientes.index') }}">Pacientes</a>
                                     <a class="dropdown-item" href="{{ route('pacientes.upload') }}">Enviar Arquivo</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

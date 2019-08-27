@@ -1,20 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-    <h2>Listar Pacientes <a href="{{ route('pacientes.add') }}"><button type="button" class="btn btn-info"><i class="material-icons">add</i></button></a></h2>
-     
-        
+    <h3>Pacientes <a href="{{ route('pacientes.add') }}"><button type="button" class="btn btn-info"><i class="material-icons">add</i></button></a></h3>
 
     <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Idade</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Matricula</th>
-            <th scope="col">Data de cadastro</th>
-            <th scope="col">Data de atualização</th>
+            <th scope="col">NOME</th>
+            <th scope="col">IDADE</th>
+            <th scope="col">TELEFONE</th>
+            <th scope="col">MATRICULA</th>
+            <th scope="col">DATA DO CADASTRO</th>
+            <th scope="col">DATA DA ATUALIZAÇÃO</th>
             <th scope="col"></th>
         </tr>
         </thead>

@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Upload Pacientes</h1>
+    <h3>Upload Pacientes</h3>
     
     <form enctype="multipart/form-data" action="{{ route('pacientes.enviar') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        Enviar esse arquivo: <input name="file" type="file" />
-        <input type="submit" value="Enviar arquivo" />
+
+        <div class="form-group">
+            <input name="file" type="file" class="form-control-file" />
+        </div>    
+        <input type="submit" value="Enviar arquivo" class="btn btn-primary" />
     </form>
     
 @endsection

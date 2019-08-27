@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <h2>Atualizar Paciente</h2>
+    <h3>Atualizar Paciente</h3>
     
     <form action="{{ route('pacientes.put') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">

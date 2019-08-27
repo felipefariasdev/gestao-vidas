@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <h2>Novo Paciente</h2>
+    <h3>Novo Paciente</h3>
     
     <form action="{{ route('pacientes.save') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
