@@ -78,7 +78,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" style="font-size: 50px">
                     Sistema de Gestão de Vidas
                 </div>
 

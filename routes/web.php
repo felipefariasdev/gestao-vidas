@@ -23,4 +23,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pacientes', 'PacienteController@index')->name('pacientes.index');
     Route::get('/pacientes/upload', 'PacienteController@upload')->name('pacientes.upload');
     Route::post('/pacientes/enviar', 'PacienteController@enviar')->name('pacientes.enviar');
+    Route::get('/pacientes/add', 'PacienteController@add')->name('pacientes.add');
+    Route::post('/pacientes/save', 'PacienteController@save')->name('pacientes.save');
+    Route::get('/pacientes/delete/{id}', 'PacienteController@delete')->name('pacientes.delete');
+    Route::get('/pacientes/update/{id}', 'PacienteController@update')->name('pacientes.update');
+    Route::post('/pacientes/update', 'PacienteController@put')->name('pacientes.put');
 });

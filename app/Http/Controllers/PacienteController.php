@@ -9,7 +9,7 @@ class PacienteController extends Controller
 {
     public function index(Paciente $paciente){
 
-        $pacientes = $paciente->paginate(5);
+        $pacientes = $paciente->orderBy('id','desc')->paginate(5);
 
         return view('pacientes.index', compact('pacientes'));
     }
@@ -21,7 +21,6 @@ class PacienteController extends Controller
 
     public function enviar(){
 
-        $msg = "";
         $uploaddir = 'uploads/';
         $uploadfile = $uploaddir . basename($_FILES['file']['name']);
 
@@ -70,6 +69,51 @@ class PacienteController extends Controller
         fclose($arquivo);
 
         echo "<a href='/pacientes'>Listar Pacientes</a>";
+    }
+
+    public function add(){
+
+        return view('pacientes.add');
+    }
+
+    public function save(Request $request, Paciente $paciente){
+
+        $paciente->nome      = $request->nome;
+        $paciente->idade     = $request->idade;
+        $paciente->telefone  = $request->telefone;
+        $paciente->matricula = $request->matricula;
+        if($paciente->save()){
+            echo "Salvo com sucesso!";
+        }else{
+            echo "Não foi possível salvar";
+        }
+        return redirect('pacientes');
+    }
+
+    public function delete($id){
+        Paciente::find($id)->delete();
+        return redirect('pacientes');
+    }
+
+    public function update($id,Paciente $paciente){
+        $paciente = $paciente->find($id);
+        return view('pacientes.update',compact('paciente'));
+    }
+
+    public function put(Request $request, Paciente $paciente){
+
+        $paciente = $paciente->find($request->id);
+
+        $paciente->nome      = $request->nome;
+        $paciente->idade     = $request->idade;
+        $paciente->telefone  = $request->telefone;
+        $paciente->matricula = $request->matricula;
+        if($paciente->save()){
+            echo "Atualizado com sucesso!";
+        }else{
+            echo "Não foi possível salvar";
+        }
+        return redirect('pacientes');
     }
 
 }
